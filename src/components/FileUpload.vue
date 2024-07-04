@@ -93,6 +93,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+  /* overflow: visible; */
 }
 th, td {
   border: 1px solid #ddd;
