@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { createRouter, createWebHistory } from 'vue-router'
 import FileUpload from '../components/FileUpload.vue'
 

@@ -12,7 +12,10 @@
         <h5>{{ message }}</h5>
       </div>
       <div v-if="items.length">
-        <v-data-table :items="items"></v-data-table>
+        <v-data-table
+          :headers="headers"
+          :items="items"
+        ></v-data-table>
       </div>
     </form>
   </div>
