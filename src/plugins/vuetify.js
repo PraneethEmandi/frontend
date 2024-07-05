@@ -1,4 +1,10 @@
-import { createVuetify } from "vuetify";
-import "vuetify/styles";
+// Styles
+import '@mdi/font/css/materialdesignicons.css'
+import 'vuetify/styles'
 
-export default createVuetify();
+// Vuetify
+import { createVuetify } from 'vuetify'
+
+export default createVuetify(
+  // https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
+)

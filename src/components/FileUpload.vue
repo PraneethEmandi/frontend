@@ -12,18 +12,7 @@
         <h5>{{ message }}</h5>
       </div>
       <div v-if="items.length">
-        <table>
-          <thead>
-            <tr>
-              <th v-for="header in headers" :key="header">{{ header }}</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(item, index) in items" :key="index">
-              <td v-for="header in headers" :key="header">{{ item[header] }}</td>
-            </tr>
-          </tbody>
-        </table>
+        <v-data-table :items="items"></v-data-table>
       </div>
     </form>
   </div>
@@ -68,7 +57,7 @@ export default {
       try {
         const response = await axios.post("http://localhost:8000/upload", formData);
         this.message = "Uploaded!";
-        this.headers = Object.keys(response.data.data[0]);
+        this.headers = Object.keys(response.data.data[0]).map(key => ({ text: key, value: key }));
         this.items = response.data.data;
       } catch (err) {
         console.log(err);
@@ -88,18 +77,5 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-  /* overflow: visible; */
-}
-th, td {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-th {
-  background-color: #f4f4f4;
 }
 </style>
