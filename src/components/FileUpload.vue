@@ -73,12 +73,14 @@ export default {
 
 <style scoped>
 .file-upload {
-  max-width: 600px;
+  max-width: 100vw;
   margin: 0 auto;
 }
 form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: scroll;
+  max-width: 100vw;
 }
 </style>
